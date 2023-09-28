@@ -170,6 +170,51 @@ ORDER BY number_year, number_month, commodity;
 
 ### VALORES MÁXIMOS E DATA DAS COMMODITIES
 
+```
+-- Valor Máximo Mensal Médio
+
+select 
+    dp2.commodity, 
+    dp2.category, 
+    dp.month_year, 
+    dp2.max_media 
+from data_project dp
+Join (
+    select 
+        commodity, 
+        category, 
+        max(media) as max_media 
+    from data_project
+    Group by 1,2) dp2   on dp.commodity = dp2.commodity 
+                        and dp.category = dp2.category 
+                        and dp.media = dp2.max_media
+```
+
+![image](https://github.com/IHMBUENO/MVP1_ANALISE_COMMODITIES/assets/145625092/771674ac-8e3a-40c6-b6e4-22193164e66a)
+
+```
+-- Valor Mínimo Mensal Médio
+
+select 
+    dp2.commodity, 
+    dp2.category, 
+    dp.month_year, 
+    dp2.min_media 
+from data_project dp
+Join (
+    select 
+        commodity, 
+        category, 
+        min(media) as min_media 
+    from data_project
+    Group by 1,2) dp2   on dp.commodity = dp2.commodity 
+                        and dp.category = dp2.category 
+                        and dp.media = dp2.min_media
+```
+![image](https://github.com/IHMBUENO/MVP1_ANALISE_COMMODITIES/assets/145625092/43aed7f5-d3e2-4598-8572-ac905cb7dbde)
+
+
+
 
 
 
