@@ -173,6 +173,8 @@ ORDER BY number_year, number_month, commodity;
 ```
 -- Valor Máximo Mensal Médio
 
+-- Valor Máximo Mensal Médio
+
 select 
     dp2.commodity, 
     dp2.category, 
@@ -188,12 +190,16 @@ Join (
     Group by 1,2) dp2   on dp.commodity = dp2.commodity 
                         and dp.category = dp2.category 
                         and dp.media = dp2.max_media
+order by 1
+
+
 ```
 
-![image](https://github.com/IHMBUENO/MVP1_ANALISE_COMMODITIES/assets/145625092/771674ac-8e3a-40c6-b6e4-22193164e66a)
+![image](https://github.com/IHMBUENO/MVP1_ANALISE_COMMODITIES/assets/145625092/9c36f101-1397-475d-9c50-e1f45f779602)
+
 
 ```
--- Valor Mínimo Mensal Médio
+ -- Valor Mínimo Mensal Médio
 
 select 
     dp2.commodity, 
@@ -210,8 +216,10 @@ Join (
     Group by 1,2) dp2   on dp.commodity = dp2.commodity 
                         and dp.category = dp2.category 
                         and dp.media = dp2.min_media
+    order by 1
 ```
-![image](https://github.com/IHMBUENO/MVP1_ANALISE_COMMODITIES/assets/145625092/43aed7f5-d3e2-4598-8572-ac905cb7dbde)
+![image](https://github.com/IHMBUENO/MVP1_ANALISE_COMMODITIES/assets/145625092/13f21f48-80b7-489e-97c5-1b56dafdb87b)
+
 
 
 
